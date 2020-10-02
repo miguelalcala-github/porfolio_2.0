@@ -20,7 +20,6 @@ export default {
   async asyncData({$content}) {
 
     const projects = await $content('projects', 'projects').fetch()
-    console.log(projects.projects)
     return {projects}
   }
 }

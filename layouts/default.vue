@@ -45,7 +45,6 @@ h1 {
   min-height: 100vh;
   display: flex;
   flex-direction: row;
-  /* justify-content: stretch; */
   align-items: stretch;
   text-align: center;
 }
@@ -126,4 +125,39 @@ ul {
   color: #fff;
   background-color: #35495e;
 }
+.button--nav {
+  display: inline-block;
+  width: 33px;
+  height: 33px;
+  border-radius: 4px;
+  border: 1px solid #35495e;
+  color: #35495e;
+  text-decoration: none;
+  padding: 5px 10px;
+  margin-left: auto;
+  margin-bottom: 10px;
+}
+
+.button--nav:hover {
+  color: #fff;
+  background-color: #35495e;
+}
+
+.button--close {
+  position: absolute;
+  background: transparent;
+  top: 5px;
+  right: 20px;
+  border-radius: 4px;
+  border: 1px solid white;
+  color: white;
+  text-decoration: none;
+  padding: 5px 10px;
+}
+
+.button--close:hover {
+  color: teal;
+  background-color: white;
+}
+
 </style>

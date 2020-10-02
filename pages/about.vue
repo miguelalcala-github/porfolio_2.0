@@ -38,6 +38,7 @@ export default {
     width: 100%;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
     padding: 40px;
 }
 
