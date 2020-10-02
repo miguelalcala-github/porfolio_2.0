@@ -31,6 +31,15 @@ html {
   box-sizing: border-box;
   margin: 0;
 }
+h1 {
+  color: teal;
+  margin-bottom: 10px;
+}
+.nav p {
+  max-width: 500px;
+  text-align: justify;
+  margin: auto;
+}
 .container {
   margin: 0 auto;
   min-height: 100vh;
@@ -51,6 +60,7 @@ html {
   border-bottom: lightseagreen 1px solid;
   padding-bottom: 10px;
   margin-bottom: 10px;
+  
 }
 .container-index {
   display: flex;
