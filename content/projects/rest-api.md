@@ -1,26 +1,36 @@
 ---
 head:
-    title: react gallery app
+    title: REST API
     technologies: 
         - HTML
         - CSS
         - JavaScript
-        - React.js
-    live: https://mikeliam.github.io/react_gallery_app/
-    repository: https://github.com/MikeLiam/react_gallery_app
+        - Node.js
+        - Express.js
+        - SQL ORM Sequelize
+    repository: https://github.com/MikeLiam/rest_api
 images:
-    - https://res.cloudinary.com/da3z5stec/image/upload/v1601588757/portflio-nuxt/react_gallery_app_landscape_01_cohikg.png
-    - https://res.cloudinary.com/da3z5stec/image/upload/v1601588757/portflio-nuxt/react_gallery_app_landscape_02_bzaayp.png
-    - https://res.cloudinary.com/da3z5stec/image/upload/v1601588757/portflio-nuxt/react_gallery_app_landscape_03_xgznho.png
-    - https://res.cloudinary.com/da3z5stec/image/upload/v1601588757/portflio-nuxt/react_gallery_app_landscape_04_rx5kfm.png
-gif: https://res.cloudinary.com/da3z5stec/image/upload/v1598274773/React%20Gallery%20App/loading_aphbqn.gif
+    - https://res.cloudinary.com/da3z5stec/image/upload/v1601645136/portflio-nuxt/rest_api_landscape_01_rtzyja.png
+    - https://res.cloudinary.com/da3z5stec/image/upload/v1601645136/portflio-nuxt/rest_api_landscape_02_qa2zbt.png
+    - https://res.cloudinary.com/da3z5stec/image/upload/v1601645136/portflio-nuxt/rest_api_landscape_03_uub5ay.png
+    - https://res.cloudinary.com/da3z5stec/image/upload/v1601645136/portflio-nuxt/rest_api_landscape_04_vvmehi.png
 ---
-Image gallery app where search images relationated with a topic given by the user or select one of four predefined searchs.  
+REST API using Express provide a way for users to administer, _creating an account and _log-in, a school database containing information about courses: users can interact with the database by retrieving a list of courses, as well as _adding, _updating and _deleting courses in the database.  
 <br/>
-Created with React js and consuming flickr API using create_react_app, react_router and react-intersection-observer, first look to landing page where can select a link nav of a predefined search as landing page or do a new search.  
+Created with node.js, express and SQL ORM Sequelize using middleware for error handlling, authentication and field validations, routes and SQLite database:  
 <br/>
-Given the images you can click to acces to the image viewer and see all images one by one.  
+- GET _/api/courses_ Non authenticated route to get a list of all courses with respective user owner.  
 <br/>
-Taking care of searchs with no results and pages that doesn't exist.  
+- GET _/api/courses/1_ Non authenticated route to get a course with specific id.  
 <br/>
-Also added a "motorized" loading component.
+- POST _/api/user_ Non authenticated route to post/create new user. Returning location header to root.   
+<br/>
+- GET _/api/users_ Authenticated route to get user info (no password)   
+<br/>
+- POST _/api/courses_ Authenticated route to post/create new course. Returning location header with course uri.   
+<br/>
+- PUT _/api/courses/:id Authenticated route to put/update a course with specific id   
+<br/>
+- DELETE _/api/courses/:id Authenticated route to delete a course with a specific id   
+<br/>
+Every route has its error response where a problem ocurres because empty fields (or invalid format email), non existing course, authentication problem with wrong user/password/don't own course to modify or not found route.

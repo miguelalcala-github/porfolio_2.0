@@ -34,12 +34,11 @@ projects:
         id: sql-library-manager
         name: sql library manager
         image: https://res.cloudinary.com/da3z5stec/image/upload/v1601593780/portflio-nuxt/sql_library_manager_main_mi56z3.png
-    # project9:
-    #     id: rest-api
-    #     name: REST API
-    #     image: https://res.cloudinary.com/da3z5stec/image/upload/v1601588757/portflio-nuxt/react_gallery_app_main_nf4yzb.png
-    # project10:
-    #     id: full-stack-app
-    #     name: full stack app react and REST API
-    #     image: https://res.cloudinary.com/da3z5stec/image/upload/v1601588757/portflio-nuxt/react_gallery_app_main_nf4yzb.png
----
+    project9:
+        id: rest-api
+        name: REST API
+        image: https://res.cloudinary.com/da3z5stec/image/upload/v1601645136/portflio-nuxt/rest_api_main_e2lhwd.png
+    project10:
+        id: full-stack-app
+        name: full stack app react and REST API
+        image: https://res.cloudinary.com/da3z5stec/image/upload/v1601646652/portflio-nuxt/full_stack_app_main_u8uziy.png

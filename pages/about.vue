@@ -8,7 +8,6 @@
         <h3>{{ skills.title }}</h3>
         <nuxt-content :document="skills" />
         <h3>{{ contact.title }}</h3>
-        <nuxt-content :document="contact" />
         <a :href="contact.linkedin" class="button--grey" target="_blank">LinkedIn</a>
         <a :href="contact.github" class="button--grey" target="_blank">GitHub</a>
         <a :href="contact.twitter" class="button--grey" target="_blank">Twitter</a>
