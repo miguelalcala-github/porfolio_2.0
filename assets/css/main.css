@@ -144,7 +144,7 @@ ul {
 }
 
 .project-container {
-  max-width: 30%;
+  max-width: 40%;
   margin-bottom: 20px;
 }
 
@@ -362,6 +362,10 @@ ul {
   .sidebar .button--white {
     visibility: visible;
   }
+
+  .project-container {
+    max-width: 27%;
+}
 
 }
 
