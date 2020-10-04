@@ -1,7 +1,7 @@
 <template>
     <div class="index-container">
-        <div class="nav project-info">
-            <div class="project-info-container">
+        <div class="project-info-container">
+            <div class="project-info">
                 <h1>{{ head.title }}</h1>
                 <nuxt-content :document="project" />
             </div>
