@@ -37,54 +37,6 @@ export default {
 }
 </script>
 
-<style scoped>
-.sidebar{
-    min-width: 300px;
-    max-width: 300px;
-    padding: 40px 20px 30px;
-    display: flex;
-    flex-wrap: wrap;
-    align-content: flex-start;
-    justify-content: center;
-    background: teal;
-    left: 0px;
-    position: fixed; 
-    z-index: 1;
-    height: 100%;
-    overflow-x: hidden; 
-    overflow-y: hidden; 
-    visibility: hidden;
-    transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
-}
-.collapsed {
-    max-width: 70px;
-    min-width: 70px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.visible {
-    visibility: visible;
-}
-.main {
-  visibility: visible;
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-  padding: 5px 10px;
-}  
-h3 {
-    font-family: bold;
-    letter-spacing: 2.5px;
-    -webkit-text-transform: uppercase;
-    text-transform: uppercase;
-    color: white;
+<style>
 
-    margin-bottom: 1.5rem;
-}
-p {
-    color: white;
-    text-align: justify;
-    margin-bottom: 2rem;
-}
 </style>

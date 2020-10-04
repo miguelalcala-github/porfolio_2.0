@@ -1,5 +1,5 @@
 <template>
-    <div class="container-index">
+    <div class="index-container">
       <div class="nav">
         <h1>{{ projects.title }}</h1>
         <p>{{ projects.description }}</p>
@@ -26,25 +26,5 @@ export default {
 </script>
 
 <style>
-.links {
-  padding-top: 15px;
-}
-.projects-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 100%;
-  justify-content: space-around;
-}
-.project-container {
-  max-width: 30%;
-  margin-bottom: 20px;
-}
-.project-container .thumbnail {
-  margin-bottom: 10px;
-  box-shadow: 0px 0px 10px 5px lightseagreen;
-}
-.project-container h5 {
-  text-transform: uppercase;
-}
+
 </style>

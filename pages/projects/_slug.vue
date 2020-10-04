@@ -1,7 +1,7 @@
 <template>
-    <div class="container-index">
-        <div class="nav">
-            <div class="info-container">
+    <div class="index-container">
+        <div class="nav project-info">
+            <div class="project-info-container">
                 <h1>{{ head.title }}</h1>
                 <nuxt-content :document="project" />
             </div>
@@ -30,29 +30,6 @@ export default {
 }
 </script>
 
-<style scoped>
-.nav {
-    background: honeydew;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-h1 {
-    margin-bottom: 10px;
-    text-transform: capitalize;
-    color: teal;
-}
-.sidebar-list {
-    margin-top: 10px;
-    background: white;
-}
-.project-images {
-    display: flex;
-    flex-direction: column;
-}
-.gif {
-    max-width: 500px;
-    align-self: center;
-    margin-bottom: 10px;
-}
+<style>
+
 </style>
