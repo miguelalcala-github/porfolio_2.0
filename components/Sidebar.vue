@@ -11,7 +11,7 @@
         </div>
         <div id="main" class="main">
             <button class="button--nav" @click="openNav()">&#9776;</button>
-            <nuxt-link v-if="isHome" class="button--nav" to="/about">&#9993;</nuxt-link>
+            <nuxt-link v-if="isHome" class="button--nav" to="/about">&#9736;</nuxt-link>
             <nuxt-link v-else class="button--nav" to="/">&#8962;</nuxt-link>
         </div>
     </div>

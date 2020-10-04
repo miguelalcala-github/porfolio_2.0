@@ -43,7 +43,7 @@ ul {
   margin: 0 auto;
   min-height: 100vh;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: stretch;
   text-align: center;
 }
@@ -88,7 +88,7 @@ ul {
   color: #35495e;
   text-decoration: none;
   padding: 5px 10px;
-  margin-left: auto;
+    margin-left: 10px;
   margin-bottom: 10px;
 }
 
@@ -165,16 +165,16 @@ ul {
   padding: 40px 20px 30px;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
-  align-content: flex-start;
-  justify-content: center;
+  flex-direction: row;
+justify-content: space-around;
+align-items: flex-start;
   background: teal;
   left: 0px;
+  z-index: 2;
   position: fixed;
-  z-index: 1;
-  height: 100%;
-  overflow-x: hidden;
+    height: 100vh;
   overflow-y: hidden;
+  overflow-x: hidden;
   visibility: hidden;
   transition: 0.5s;
 }
@@ -186,8 +186,7 @@ ul {
 }
 
 .collapsed {
-  max-width: 70px;
-  min-width: 70px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -200,9 +199,14 @@ ul {
 .main {
   visibility: visible;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: flex-start;
   position: fixed;
+  width: 100%;
+  background: white;
+  opacity: 0.7;
   padding: 5px 10px;
+  z-index: 1;
 }
 
 .sidebar h3 {
@@ -313,6 +317,19 @@ ul {
     max-width: 68%;
   }
 
+  .container{
+      flex-direction: row;
+  }
+
+  .main{
+      width: auto;
+      left: 0;
+      flex-direction: column;
+  }
+
+  .button--nav{
+      margin-left: auto;
+  }
 }
 
 /* Project info & About info*/
