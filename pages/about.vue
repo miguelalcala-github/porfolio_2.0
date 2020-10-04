@@ -30,10 +30,6 @@ export default {
             skills,
             contact 
             }
-
     }
 }
 </script>
-
-<style >
-</style>
