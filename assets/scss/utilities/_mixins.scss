@@ -1,0 +1,104 @@
+// ==========================================================================
+// Mixins
+// ==========================================================================
+
+// BEM selectors
+
+@mixin e($element) {
+	&__#{$element} {
+    @content;
+  }
+}
+@mixin m($modifier) {
+  &--#{$modifier} {
+    @content;
+  }
+}
+
+// Media queries
+
+@mixin mq($break) {
+	@if $break == "xsmall" {
+		@media (min-width: $brkpoint-xs) and (max-width: $brkpoint-sm) {
+			@content;
+		}
+	}
+	@else if $break == "small" {
+		@media (min-width: $brkpoint-sm + 1) {
+			@content;
+		}
+	}
+	@else if $break == "medium" {
+		@media (min-width: $brkpoint-md + 1) {
+			@content;
+		}
+	}
+	@else if $break == "large" {
+		@media (min-width: $brkpoint-lg + 1) {
+			@content;
+		}
+	}
+	@else {
+		@error "Whooops! No value could be retrieved for `#{break}`";
+	}
+}
+
+// Generate modifier color classes
+
+@mixin bg-colors($map) {
+	@each $theme, $color in $map {
+		&--#{$theme} {
+			background-color: $color;    
+		}
+	}
+}
+
+// Generating :before or :after pseudo-element shapes
+
+@mixin p-el(
+	$el,
+	$el-w: null,
+	$el-h: null) {
+	@if $el == "before" or $el == "after" { 
+	  &:#{$el} {
+		  @extend %pseudos;
+		  width: $el-w;
+	  	height: $el-h;
+	    @content;
+	  }
+	} 
+	@else {
+    @error "`#{$el}` is not a valid pseudo-element.";
+	}
+}
+
+// Image replacement
+
+@mixin img-replace($img, $w, $h, $disp: block) {
+	background-image: url('#{$path--rel}/#{$img}');
+	background-repeat: no-repeat;
+	width: $w;
+	height: $h;
+	display: $disp;
+}
+
+// Grid columns
+
+@mixin g-columns($mod-query) {
+
+	@for $i from 1 through $g-col-count {
+        
+        $context: g-context($g-col-width, $g-col-count, $g-gutter-width);
+		$target: ($g-col-width * $i) + ($g-gutter-width * ($i - 1));
+		$mod: --#{$mod-query}--#{$i};
+		@if $mod-query == xs {
+			$mod: --#{$i}
+		}
+
+        // Generate column modifier classes
+        &#{$mod} {
+			width: percentage($target/$context);
+			margin-bottom: rem(2 * $g-gutter-width);
+        }
+    }
+}

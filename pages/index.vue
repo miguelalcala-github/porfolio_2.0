@@ -1,15 +1,12 @@
 <template>
-    <div class="index-container">
-      <div class="nav">
-        <h1>{{ projects.title }}</h1>
-        <p>{{ projects.description }}</p>
-      </div>
-      <div class="projects-container">
-        <div v-for="project of projects.projects" :key="project.name" class="project-container" >
+    <div class="grid">
+      <p class="grid__col--12 headline-secondary--grouped">{{ projects.description }}</p>
+      <div class="grid__col--12 grid">
+        <div v-for="project of projects.projects" :key="project.name" class="grid__col--sm--6 grid__col--md--4 grid__col--lg--3 showcase" >
           <nuxt-link :to="'/projects/' + project.id">
-            <img  :src="project.image" class="thumbnail" :alt="project.name + ' main'">
+            <img  :src="project.image" class="showcase__img" :alt="project.name + ' main'">
+            <h5 class="showcase__img--title">{{ project.name }}</h5>
           </nuxt-link>
-          <h5>{{ project.name }}</h5>
         </div>
       </div>
     </div>
@@ -22,5 +19,6 @@ export default {
     const projects = await $content('projects', 'projects').fetch()
     return {projects}
   }
+  
 }
 </script>

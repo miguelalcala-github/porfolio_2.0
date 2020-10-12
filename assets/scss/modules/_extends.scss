@@ -1,0 +1,84 @@
+// ==========================================================================
+// Placeholders
+// ==========================================================================
+
+// Nav Items
+
+%nav-item-link {
+  font-size: em(20px);
+  font-weight: $font-weight--light;
+  //display: block;
+  // padding: rem(8px, 18px);
+  border-bottom: 1px solid transparent;
+  @include mq(xsmall) {
+    // margin-top: rem(10px);
+    border-bottom-color: palette(grey, xx-light);
+    // padding-top: rem(14px, 18px);
+    //  padding-bottom: rem(14px, 18px);
+  }
+}
+%nav-item-on {
+  color: palette(black);
+  border-color: $color-primary;
+}
+%nav-mobile {
+  @include mq (xsmall) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-bottom: 0;
+  }
+}
+// Headlines
+
+%hdln-prim {
+  color: palette(primary, dark);
+  font-weight: $font-weight--ultra-bold;
+  font-size: em(38px);
+  line-height: (46px/38px);
+  margin-top: 0;
+}
+
+%hdln-sec {
+  color: palette(grey, light);
+  letter-spacing: $letter-space;
+  font-weight: $font-weight--thin;
+  font-size: em(20px);
+  font-family: $font-family--secondary;
+}
+
+%hdln-terc {
+  color: palette(primary, light);
+  letter-spacing: $letter-space;
+  font-weight: $font-weight--medium;
+  font-size: em(15px);
+  font-family: $font-family--secondary;
+
+}
+
+// Buttons
+
+%btn {
+  padding: 15px 30px;
+  border: 0;
+  border-radius : $br--default;
+  color: $white;
+  text-transform: uppercase;
+  font-size : rem(14px);
+  font-weight: $font-weight--medium;
+  transition: opacity $trns-duration;
+  display: block;
+  &:hover {
+    opacity: .75;
+  }
+  &:active {
+    opacity: initial;
+  }
+}
+
+// Icons
+
+%icn--ui {
+	line-height: 0;
+	cursor: pointer;
+}

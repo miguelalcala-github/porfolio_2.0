@@ -1,0 +1,36 @@
+// ==========================================================================
+// Placeholders
+// ==========================================================================
+
+%grid-default {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+// Panels
+
+%panel-default {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    & > p {
+        text-align: justify;
+    }
+    @include mq(medium) {
+        padding-bottom: em(20px);
+    }
+}
+
+%panel-padding {
+    padding-bottom: em(34px);
+    @include mq(medium) {
+        padding-top: em(80px);
+        padding-bottom: em(34px);
+    }
+}
+
+%center-align {
+    justify-content: center;
+}

@@ -1,22 +1,25 @@
 <template>
-  <div class="about-container">
-    <div class="info-container">
-        <nuxt-content :document="info"/>
-    </div>  
-    <div class="sidebar-list">
-        <h3>{{ skills.title }}</h3>
-        <nuxt-content :document="skills" />
+    <div class="grid">
+      <img :src="info.image" :alt="info.altImage" class="img--avatar grid__col--8 grid__col--sm--6" />
+      <div class="grid__col--12 grid__col--sm--10 grid__col--md--9 grid__col--lg--8">
+        <nuxt-content :document="info" class="panel--centered"/>
+      </div>
+      <div class="grid__col--12 grid__col--sm--2 grid__col--md--3 grid__col--lg--4 ">
+        <div class="grid--sidelist">
+          <h3 class="grid__col--12 grid__col--sm--12">{{ skills.title }}</h3>
+          <nuxt-content :document="skills" class="grid__col--sm--12" />
+        </div>
+        <div class="grid--sidelist">
+          <h3 class="grid__col--12 grid__col--sm--12">{{ contact.title }}</h3>
+          <a :href="contact.linkedin" class="grid__col--12 grid__col--sm--12" target="_blank">LinkedIn</a>
+          <a :href="contact.github" class="grid__col--12 grid__col--sm--12" target="_blank">GitHub</a>
+          <a :href="contact.twitter" class="grid__col--12 grid__col--sm--12" target="_blank">Twitter</a>
+        </div>
+      </div>
+      <div class="grid__col--12">
+        <img :src="info.logo" :alt="info.altLogo" />
+      </div>
     </div>
-    <div class="image-container">
-      <img :src="info.logo" alt="info.alt" />
-    </div>
-    <div class="contact-container">
-        <h3>{{ contact.title }}</h3>
-        <a :href="contact.linkedin" class="button--grey" target="_blank">LinkedIn</a>
-        <a :href="contact.github" class="button--grey" target="_blank">GitHub</a>
-        <a :href="contact.twitter" class="button--grey" target="_blank">Twitter</a>
-    </div>
-  </div>
 </template>
 
 <script>

@@ -1,11 +1,6 @@
 <template>
-  <div class="container">
-    <Sidebar />
+  <div>
+    <Myheader />
     <Nuxt />
   </div>
 </template>
-
-<style>
-
-
-</style>
