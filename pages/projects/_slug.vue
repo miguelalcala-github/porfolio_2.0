@@ -10,8 +10,12 @@
                 <ul v-for="tech of head.technologies" :key="tech" class="grid__col--12 grid__col--sm--12">
                     <li>{{ tech }}</li>
                 </ul>
-                <a v-show="head.live" :href="head.live" class="grid__col--12 grid__col--sm--12" target="_blank">Live Demo</a>
-                <a :href="head.repository" class="grid__col--12 grid__col--sm--12" target="_blank">GitHub Repository</a>
+                <div class="grid__col--12 grid__col--sm--12">
+                    <a v-show="head.live" :href="head.live" class="btn--link" target="_blank">Live Demo</a>
+                </div>
+                <div class="grid__col--12 grid__col--sm--12">
+                    <a :href="head.repository" class="btn--link" target="_blank">GitHub Repository</a>
+                </div>
             </div>
         </div>
         <div class="grid__col--12">

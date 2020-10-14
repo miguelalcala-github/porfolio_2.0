@@ -11,9 +11,15 @@
         </div>
         <div class="grid--sidelist">
           <h3 class="grid__col--12 grid__col--sm--12">{{ contact.title }}</h3>
-          <a :href="contact.linkedin" class="grid__col--12 grid__col--sm--12" target="_blank">LinkedIn</a>
-          <a :href="contact.github" class="grid__col--12 grid__col--sm--12" target="_blank">GitHub</a>
-          <a :href="contact.twitter" class="grid__col--12 grid__col--sm--12" target="_blank">Twitter</a>
+          <div class="grid__col--12 grid__col--sm--12">
+            <a :href="contact.linkedin" class="btn--link" target="_blank">LinkedIn</a> 
+          </div>
+          <div class="grid__col--12 grid__col--sm--12">
+            <a :href="contact.github" class="btn--link" target="_blank">GitHub</a>
+          </div>
+          <div class="grid__col--12 grid__col--sm--12">
+            <a :href="contact.twitter" class="btn--link" target="_blank">Twitter</a>
+          </div>
         </div>
       </div>
       <div class="grid__col--12">

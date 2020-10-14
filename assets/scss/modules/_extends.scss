@@ -59,15 +59,16 @@
 // Buttons
 
 %btn {
-  padding: 15px 30px;
+  padding: rem(10px, $base__font-size) rem(12px, $base__font-size);
+	font-size: $base__font-size;
   border: 0;
   border-radius : $br--default;
   color: $white;
-  text-transform: uppercase;
-  font-size : rem(14px);
+  // text-transform: uppercase;
+  // font-size : rem(14px);
   font-weight: $font-weight--medium;
   transition: opacity $trns-duration;
-  display: block;
+  // display: block;
   &:hover {
     opacity: .75;
   }

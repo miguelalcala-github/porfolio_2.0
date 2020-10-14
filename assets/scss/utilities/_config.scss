@@ -35,7 +35,7 @@ $emerald : #5ece7f;
 $sunglo : #e67478;
 $coral : #ff784f;
 $purple-majesty : #9279c3;
-$scooter : #39add1;
+$scooter : #52B7D1;
 
 // Color Usage
 
@@ -72,8 +72,9 @@ $color-palettes: (
 $ui-colors: (default : $fountain-blue,
   success : $emerald,
   error : $sunglo,
-  warning : $coral,
+  warning: $coral,
   info : $purple-majesty,
+  link: $scooter
 );
 
 
@@ -90,7 +91,7 @@ $br--round : 50%;
 
 // Transitions
 
-$trns-duration : .3s;
+$trns-duration : .4s;
 
 // Path to Assets
 
