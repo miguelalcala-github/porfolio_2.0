@@ -704,6 +704,11 @@ nuxt-content {
   max-width: 50%;
   height: 50%;
 }
+.img--landscape {
+  box-shadow: #76c9c3 5px 5px 10px;
+  padding: 0.2rem;
+  max-height: calc(100vw / 2.81);
+}
 
 .headline-primary {
   margin-bottom: 1.6666666667rem;

@@ -15,8 +15,8 @@
             </div>
         </div>
         <div class="grid__col--12">
-            <img v-show="project.gif" :src="project.gif" :alt="head.title + ' gif'" class="gif">
-            <img v-for="(image,index) of images" :key="index" :src="image" class="thumbnail" :alt="head.title + index" />
+            <img v-show="project.gif" :src="project.gif" :alt="head.title + ' gif'" class="img--landscape">
+            <img v-for="(image,index) of images" :key="index" :src="image" class="img--landscape" :alt="head.title + index" />
         </div>
     </div>
 </template>
