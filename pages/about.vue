@@ -2,9 +2,9 @@
     <div class="grid">
       <img :src="info.image" :alt="info.altImage" class="img--avatar grid__col--8 grid__col--sm--6" />
       <div class="grid__col--12 grid__col--sm--10 grid__col--md--9 grid__col--lg--8">
-        <nuxt-content :document="info" class="panel--centered"/>
+        <nuxt-content :document="info" class="panel"/>
       </div>
-      <div class="grid__col--12 grid__col--sm--2 grid__col--md--3 grid__col--lg--4 ">
+      <div class="grid__col--12 grid__col--sm--2 grid__col--md--3 grid__col--lg--4">
         <div class="grid--sidelist">
           <h3 class="grid__col--12 grid__col--sm--12">{{ skills.title }}</h3>
           <nuxt-content :document="skills" class="grid__col--sm--12" />

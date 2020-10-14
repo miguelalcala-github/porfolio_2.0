@@ -12,6 +12,11 @@
 			@extend %hdln-prim;
 			margin-bottom: 0;
 		}
+
+		@include m(cap) {
+			@extend %hdln-prim;
+			text-transform: capitalize;
+		}
 	}
 
  	&-secondary {

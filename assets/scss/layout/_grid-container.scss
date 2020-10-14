@@ -21,6 +21,7 @@
             text-align: right;
         }
         & [class^="grid__col--"] {
+
             @include mq(xsmall) {
                 margin-top: 0;
                 margin-bottom: rem(5px);
