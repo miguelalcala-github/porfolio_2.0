@@ -8,6 +8,7 @@ head:
         - Node.js
         - Express.js
         - SQL ORM Sequelize
+    live: https://restapimikeliam.herokuapp.com/
     repository: https://github.com/MikeLiam/rest_api
 images:
     - https://res.cloudinary.com/da3z5stec/image/upload/v1601645136/portflio-nuxt/rest_api_landscape_01_rtzyja.png

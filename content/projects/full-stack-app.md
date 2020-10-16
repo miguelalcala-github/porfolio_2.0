@@ -6,6 +6,7 @@ head:
         - CSS
         - JavaScript
         - React.js
+    live: https://mikeliam.github.io/full_stack_app_with_react_and_a_rest_api/
     repository: https://github.com/MikeLiam/full_stack_app_with_react_and_a_rest_api
 images:
     - https://res.cloudinary.com/da3z5stec/image/upload/v1601646652/portflio-nuxt/full_stack_app_landscape_01_pd5ork.png

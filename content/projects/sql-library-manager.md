@@ -9,6 +9,7 @@ head:
         - Express.js
         - SQL ORM Sequelize
         - SQLite
+    live: https://sqllibrarymanagermikeliam.herokuapp.com
     repository: https://github.com/MikeLiam/sql_library_manager
 images:
     - https://res.cloudinary.com/da3z5stec/image/upload/v1601593780/portflio-nuxt/sql_library_manager_landscape_01_gm771n.png
