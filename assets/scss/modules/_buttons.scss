@@ -3,11 +3,15 @@
 // ==========================================================================
 
 .btn {
-	@include bg-colors($ui-colors);
+  @include bg-colors($ui-colors);
+
 }
 
 [class^="btn--"] {
   @extend %center-align;
   @extend %btn;
   width: auto;
+  [class*="nav__item"] > & {
+      padding: rem(2px);
+  }
 }

@@ -318,6 +318,10 @@ button {
   outline: 0;
 }
 
+input {
+  outline: 0;
+}
+
 .grid--sidelist, .grid {
   width: 90%;
   display: flex;
@@ -807,6 +811,9 @@ button {
 
 [class^=btn--] {
   width: auto;
+}
+[class*=nav__item] > [class^=btn--] {
+  padding: 0.2rem;
 }
 
 .navbar {

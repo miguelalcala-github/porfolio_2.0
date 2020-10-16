@@ -18,7 +18,8 @@
               <nuxt-link to="#">Posts</nuxt-link>
             </li>
             <li class="nav__item">
-              <nuxt-link to="#">Sign in</nuxt-link>
+              <button v-if="auth" class="btn--warning" @click="logOut()">Log out</button>
+              <nuxt-link v-else to="/login">Log in</nuxt-link>
             </li>
           </ul>
         </nav>
@@ -42,6 +43,15 @@ export default {
         } else {
           return 'My portfolio'
         }
+      },
+      logOut(e) {
+        this.$logout();
+      }
+    },
+    computed: {
+      auth() {
+        const user = this.$store.state.authenticatedUser
+        return user ? this.$store.state.authenticatedUser.firstName : false
       }
     }
 }
