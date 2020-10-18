@@ -15,7 +15,7 @@
               id="emailAddress"
               name="emailAddress"
               type="text"
-              :value="emailAddress"
+              v-model="credentials.emailAddress"
               placeholder="Email Address"
               class="form__input"
             />
@@ -24,7 +24,7 @@
               id="password"
               name="password"
               type="password"
-              :value="password"
+              v-model="credentials.password"
               placeholder="Password"
               class="form__input"
             />
@@ -39,27 +39,26 @@
 export default {
   data() {
     return {
-      emailAddress: "",
-      password: "",
+      credentials:{
+        emailAddress: "",
+        password: "",
+      },
       errors: [],
     };
   },
   methods: {
     cancel() {
-        this.$logout();
+        this.clearForm();
     },
     submit() {
-        const credentials = {
-        emailAddress: "joe@smith.com",
-        password: "joepassword",
-        };
-        this.$login(credentials)
+        this.$login(this.credentials)
         .then((user) => {
 
+          this.$router.push("/post")
         })
         .catch((error) => {
           if (error.status) {
-
+            this.clearForm();
             this.errors = [error.message]
           } else {
 
@@ -67,9 +66,10 @@ export default {
           }
         });
     },
-  },
-  async asyncData({ $login }) {
-
+    clearForm() {
+      this.credentials.emailAddress="";
+      this.credentials.password="";
+    },
   },
 };
 </script>

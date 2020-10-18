@@ -1,0 +1,32 @@
+// ==========================================================================
+// card
+// ==========================================================================
+
+.card {
+  
+  @extend %card;
+    @include e(title) {
+        width: 100%;
+    }
+    @include e(description) {
+        overflow: hidden;
+        max-height: rem(100px);
+        padding: rem(10px) 0;
+        text-align: justify;
+        & > * {
+            font-size: em(16px);
+        }
+    }
+    @include e(date) {
+        width: 100%;
+    }
+    @include e(tag) {
+        border-radius : $br--default;
+        border: solid 1px palette(primary, light);
+        padding: 0 rem(1px);
+    }
+    &:hover{
+        box-shadow: 0 8px 16px 0  palette(primary, light);
+    }
+
+}

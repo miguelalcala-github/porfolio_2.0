@@ -9,7 +9,7 @@
         height: 50%;
     }
     @include m(landscape) {
-        box-shadow: palette(primary, light) 5px 5px 10px;
+        box-shadow: 0 8px 16px 0 palette(primary, light);
         padding: rem(2px);
         max-height: calc(100vw / 2.81);
     }

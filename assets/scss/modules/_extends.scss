@@ -83,3 +83,18 @@
 	line-height: 0;
 	cursor: pointer;
 }
+
+// Card
+
+%card {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-around;
+  cursor: pointer;
+  box-shadow: 0 4px 8px 0 palette(primary, light);
+  transition: 0.3s;
+  padding: 2px 16px;
+  border-radius: 5px;
+  text-align: center;
+}

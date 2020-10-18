@@ -47,7 +47,7 @@ export default {
   
   axios: {
     // proxyHeaders: false
-    baseURL: 'https://restapimikeliam.herokuapp.com/api/'
+    baseURL: 'https://mennrestapimikeliam.herokuapp.com/api/'
   },
 
   content: {

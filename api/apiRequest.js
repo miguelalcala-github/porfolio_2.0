@@ -1,7 +1,8 @@
 export default $axios => ({
-    createUser(payload) {
-        return $axios.$post(`/users`, payload)
-    },
+    // Disabled
+    // createUser(payload) {
+    //     return $axios.$post(`/users`, payload)
+    // },
 
     async getUser(credentials) {
         const authorization = encodeCredentials(credentials);
@@ -21,24 +22,30 @@ export default $axios => ({
         })
     },
     
-    createPost(payload) {
-        return $axios.$post(`/courses`, payload)
+    async createPost(payload) {
+        return $axios.$post(`/post`, payload)
     },
 
-    showPost(id) {
-        return $axios.$get(`/courses/${id}`)
+    async showPost(id) {
+        return $axios.$get(`/post/${id}`)
     },
   
-    show() {
-        return $axios.$get(`/courses`)
+    async show() {
+        return await $axios.$get(`/post`)
+            .then(response => {
+                return response
+            })
+            .catch(err => {
+                throw new Error(handlePageError(err.response.status));
+            })
     },
   
     updatePost(payload, id) {
-        return $axios.$get(`/courses/${id}`, payload)
+        return $axios.$get(`/post/${id}`, payload)
     },
   
     deletePost(id) {
-        return $axios.$delete(`/courses/${id}`)
+        return $axios.$delete(`/post/${id}`)
     },
 
 

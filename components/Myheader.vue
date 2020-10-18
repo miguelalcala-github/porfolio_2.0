@@ -15,7 +15,7 @@
           <p class="grid__col--12 grid__col--sm--6 headline-primary" :class="collapsed ? '' : 'is-collapsed-mobile' ">{{titleByPage()}}</p>
           <ul class="grid__col--12 grid__col--sm--3 nav" :class="collapsed ? 'is-collapsed-mobile' : ''">
             <li class="nav__item">
-              <nuxt-link to="#">Posts</nuxt-link>
+              <nuxt-link to="/post">Post</nuxt-link>
             </li>
             <li class="nav__item">
               <button v-if="auth" class="btn--warning" @click="logOut()">Log out</button>
