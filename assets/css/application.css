@@ -697,7 +697,10 @@ input {
 }
 
 .card__title {
-  width: 100%;
+  max-width: 12rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .card__description {
   overflow: hidden;

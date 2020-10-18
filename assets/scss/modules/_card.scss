@@ -6,7 +6,10 @@
   
   @extend %card;
     @include e(title) {
-        width: 100%;
+        max-width: rem(120px);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     @include e(description) {
         overflow: hidden;
