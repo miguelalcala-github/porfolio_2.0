@@ -11,7 +11,7 @@
 }
 
 body {
-  color: palette(black);
+  color: palette(grey, dark);
   font-size: em($base__font-size);
   line-height: ($base__line/$base__font-size);
   font-family: $font-family--primary;
