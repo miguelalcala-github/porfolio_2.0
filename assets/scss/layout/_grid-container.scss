@@ -32,6 +32,19 @@
         }
     }
 
+    @include m(post) {
+        @extend %grid-default;
+        @extend .centered;
+        text-align: justify;
+        & [class^="grid__col--"] {
+            @include mq(small) {
+                margin-top: 0;
+                margin-bottom: rem(5px);
+                justify-content: center;
+            }
+        }
+    }
+
     //  Set a max-width grid container
     @include mq(large) {
         max-width: $g-col-max-w;

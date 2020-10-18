@@ -1,24 +1,28 @@
 <template>
-    <div class="grid">
-        <div class="grid__col--12 grid">
-            <div v-for="post of posts" :key="post._id" class="grid__col--sm--6 grid__col--md--4 grid__col--lg--3" >
-                <div class="card">                    
-                    <h3>{{ post.title }}</h3>
-                    <h4>{{ formatDate(post.createdAt) }}</h4>
-                    <div v-html="compiledMarkdown(post.body)" class="card__description"></div>
+    <div class="grid--post">
+                <div class="grid__col--12 grid__col--sm--12">                    
+                    <h4 >{{ formatDate(post.createdAt) }}</h4>
                 </div>
-            </div>
-        </div>
+                <div class="grid__col--12 grid__col--sm--12">                    
+                    <h1 >{{ post.title }}</h1>
+                </div>
+                <div class="grid__col--12 grid__col--sm--12">                    
+                    <div v-html="compiledMarkdown(post.body)" ></div>
+                </div>
+                <div class="grid__col--12 grid__col--sm--12">                    
+                     <span v-for="tag of post.tags" :key="tag" class="card__tag">{{ tag }}</span>
+                </div>
+                    
     </div>
 </template>
 
 <script>
 import marked from 'marked'
 export default {
-    async asyncData({$api}) {
+    async asyncData({$api, params}) {
 
-    const posts = await $api.show()
-    return {posts}
+    const post = await $api.showPost(params.slug)
+    return {post}
   },
   methods: {
       formatDate(string) {

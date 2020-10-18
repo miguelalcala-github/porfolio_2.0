@@ -12,6 +12,7 @@
         overflow: hidden;
         max-height: rem(100px);
         padding: rem(10px) 0;
+        margin-bottom: rem(5px);
         text-align: justify;
         & > * {
             font-size: em(16px);
@@ -24,6 +25,9 @@
         border-radius : $br--default;
         border: solid 1px palette(primary, light);
         padding: 0 rem(1px);
+        @include mq(small){
+            margin-left: rem(5px);
+        }
     }
     &:hover{
         box-shadow: 0 8px 16px 0  palette(primary, light);
