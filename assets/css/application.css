@@ -760,6 +760,97 @@ input, textarea {
   box-shadow: 0 8px 16px 0 #76c9c3;
 }
 
+.toast--default {
+  background-color: #52bab3;
+  color: white;
+  border: 2px solid #52bab3;
+}
+.toast--default > * {
+  color: white;
+}
+.toast--default:hover {
+  background-color: white;
+  color: black;
+}
+.toast--default:hover > * {
+  color: black;
+}
+.toast--success {
+  background-color: #5ece7f;
+  color: white;
+  border: 2px solid #5ece7f;
+}
+.toast--success > * {
+  color: white;
+}
+.toast--success:hover {
+  background-color: white;
+  color: black;
+}
+.toast--success:hover > * {
+  color: black;
+}
+.toast--error {
+  background-color: #e67478;
+  color: white;
+  border: 2px solid #e67478;
+}
+.toast--error > * {
+  color: white;
+}
+.toast--error:hover {
+  background-color: white;
+  color: black;
+}
+.toast--error:hover > * {
+  color: black;
+}
+.toast--warning {
+  background-color: #ff784f;
+  color: white;
+  border: 2px solid #ff784f;
+}
+.toast--warning > * {
+  color: white;
+}
+.toast--warning:hover {
+  background-color: white;
+  color: black;
+}
+.toast--warning:hover > * {
+  color: black;
+}
+.toast--info {
+  background-color: #9279c3;
+  color: white;
+  border: 2px solid #9279c3;
+}
+.toast--info > * {
+  color: white;
+}
+.toast--info:hover {
+  background-color: white;
+  color: black;
+}
+.toast--info:hover > * {
+  color: black;
+}
+.toast--link {
+  background-color: #52B7D1;
+  color: white;
+  border: 2px solid #52B7D1;
+}
+.toast--link > * {
+  color: white;
+}
+.toast--link:hover {
+  background-color: white;
+  color: black;
+}
+.toast--link:hover > * {
+  color: black;
+}
+
 .showcase {
   position: relative;
 }

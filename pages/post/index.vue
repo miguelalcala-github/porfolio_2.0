@@ -57,7 +57,8 @@ export default {
         this.$toast.show('Are your sure you want to delete this post?',     
         {
             position: 'top-center',
-            type: 'info',
+            className: 'toast--warning',
+            theme: 'otuline',
             action : [
                 {
                     text : 'Confirm',
