@@ -40,6 +40,12 @@
     @include e(date) {
         width: 100%;
     }
+    @include e(tag-container) {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        margin-bottom: rem(5px);
+    }
     @include e(tag) {
         border-radius : $br--default;
         border: solid 1px palette(primary, light);

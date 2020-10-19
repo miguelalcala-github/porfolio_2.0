@@ -17,7 +17,7 @@
               type="text"
               v-model="post.title"
               placeholder="Title..."
-              class="form__input"
+              class="form__input--post"
             />
             <label class="form__label--hidden">Post</label>
             <textarea
@@ -25,7 +25,7 @@
               name="post"
               v-model="post.body"
               placeholder="Write your post..."
-              class="form__textarea"
+              class="form__textarea--body"
             >
             </textarea>
             <label class="form__label--hidden">Tags</label>
@@ -34,7 +34,7 @@
               name="tags"
               v-model="tags"
               placeholder="Tags..."
-              class="form__textarea"
+              class="form__textarea--tag"
             >
             </textarea>
           </template>
@@ -67,7 +67,8 @@ export default {
         this.clearForm();
     },
     submit() {
-        post.tags = this.convertTags(this.tags)
+        this.post.tags = this.convertTags(this.tags)
+
         this.$api.createPost(this.post, this.credentials)
         .then((location) => {
 

@@ -318,7 +318,7 @@ button {
   outline: 0;
 }
 
-input {
+input, textarea {
   outline: 0;
 }
 
@@ -684,6 +684,7 @@ input {
 }
 
 .card {
+  width: 100%;
   display: flex;
   flex-flow: row wrap;
   align-items: flex-start;
@@ -692,6 +693,16 @@ input {
   transition: 0.3s;
   border-radius: 5px;
   text-align: center;
+}
+
+.form__textarea--tag, .form__textarea--body, .form__input--post, .form__input {
+  font-size: 1.125em;
+  margin-bottom: 1.1111111111em;
+  border-bottom: 6px solid #cfd4d6;
+  border-radius: 0.4em;
+  background: #e5e8e9;
+  color: black;
+  font-weight: 300;
 }
 
 .card__body {
@@ -728,6 +739,12 @@ input {
 }
 .card__date {
   width: 100%;
+}
+.card__tag-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 0.5rem;
 }
 .card__tag {
   border-radius: 0.4em;
@@ -808,29 +825,26 @@ input {
   display: block;
   margin-bottom: 0.625em;
 }
-.form__input {
-  font-size: 1.125em;
-  margin-bottom: 1.1111111111em;
-  border-bottom: 6px solid #cfd4d6;
-  border-radius: 0.4em;
-  background: #e5e8e9;
-  color: black;
-  font-weight: 300;
+.form__input--post {
+  width: 100%;
+}
+.form__input--post:focus {
+  border-color: #52bab3;
 }
 .form__input:focus {
   border-color: #52bab3;
 }
-.form__textarea {
-  font-size: 1.125em;
-  margin-bottom: 1.1111111111em;
-  border-bottom: 6px solid #cfd4d6;
-  border-radius: 0.4em;
-  background: #e5e8e9;
-  color: black;
-  font-weight: 300;
+.form__textarea--body {
+  width: 100%;
+  min-height: 20rem;
+}
+.form__textarea--body:focus {
+  border-color: #52bab3;
+}
+.form__textarea--tag {
   width: 100%;
 }
-.form__textarea:focus {
+.form__textarea--tag:focus {
   border-color: #52bab3;
 }
 .form__btn {

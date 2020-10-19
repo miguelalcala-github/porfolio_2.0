@@ -12,29 +12,38 @@
 	}
 
 	@include e(input) {
-		font-size : em(18px);
-		margin-bottom: em(20px, 18px);
-		border-bottom: 6px solid palette(grey, x-light);
-		border-radius: $br--default;
-		background: palette(grey, xx-light);
-		color: palette(black, dark);
-		font-weight: $font-weight--light;
+		@extend %input;
+		@include m(post) {
+			@extend %input;
+			width: 100%;
+			&:focus {	
+				border-color: $color-primary;
+			}
+		}
 		&:focus {	
 			border-color: $color-primary;
 		}
 	}
+
+	
+
 	@include e(textarea) {
-		font-size : em(18px);
-		margin-bottom: em(20px, 18px);
-		border-bottom: 6px solid palette(grey, x-light);
-		border-radius: $br--default;
-		background: palette(grey, xx-light);
-		color: palette(black, dark);
-		font-weight: $font-weight--light;
-		width: 100%;
-		&:focus {	
-			border-color: $color-primary;
+		@include m(body) {
+			@extend %input;
+			width: 100%;
+			min-height: rem(200px);
+			&:focus {	
+				border-color: $color-primary;
+			}
 		}
+		@include m(tag) {
+			@extend %input;
+			width: 100%;
+			&:focus {	
+				border-color: $color-primary;
+			}
+		}
+
 	}
 
 
