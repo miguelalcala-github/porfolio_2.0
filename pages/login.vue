@@ -53,7 +53,6 @@ export default {
     submit() {
         this.$login(this.credentials)
         .then((user) => {
-
           this.$router.push("/post")
         })
         .catch((error) => {

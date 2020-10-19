@@ -14,7 +14,7 @@
                     <h3 class="card__title">{{ post.title }}</h3>
                     <div v-html="compiledMarkdown(post.body)" class="card__description"></div>
                     <div v-if="post.tags.length > 0" class="card__tag-container">
-                        <span v-for="tag of post.tags" :key="tag" class="card__tag">{{ tag }}</span>
+                        <span v-for="(tag, index) of post.tags" :key="index" class="card__tag">{{ tag }}</span>
                     </div>
                     <h4 class="card__date">{{ formatDate(post.createdAt) }}</h4>
                     </div> 
@@ -27,10 +27,20 @@
 <script>
 import marked from 'marked'
 export default {
-    async asyncData({$api}) {
+    async fetch() {
 
-    const posts = await $api.show()
-    return {posts}
+    const posts = await this.$api.show()
+    this.posts = [...posts]
+    return null
+  },
+    data() {
+    return {
+        posts: [],
+        credentials: {
+            emailAddress: '',
+            password: ''
+        },
+    };
   },
   methods: {
     formatDate(string) {
@@ -51,9 +61,14 @@ export default {
             action : [
                 {
                     text : 'Confirm',
-                    // router navigation
+                    // send delete request - delete post by filtering
                     onClick : (e, toastObject) => {
-                        console.log('deleting...', id)
+                        this.$api.deletePost(id, this.credentials)
+                            .then( response => {
+                                this.posts = [...this.posts.filter( post => {
+                                    return post._id !== id
+                                })]
+                            })
                         toastObject.goAway(0);
                     }
                 },
@@ -70,7 +85,12 @@ export default {
       computed: {
       auth() {
         const user = this.$store.state.authenticatedUser
-        return user ? this.$store.state.authenticatedUser.firstName : false
+        if (user) {
+            this.credentials.emailAddress = user.emailAddress
+            this.credentials.password = user.password
+            return user
+        }
+        return false
       }
     }
 }

@@ -2,12 +2,12 @@
   <div class="grid">
     <div class="grid__col--12 grid__col--sm--12">
       <div class="panel--centered">
-        <h1>New Post</h1>
+        <h1>Update Post</h1>
         <Form
           :cancel="cancel"
           :errors="errors"
           :submit="submit"
-          submitButtonText="Create post"
+          submitButtonText="Update post"
         >
           <template v-slot:elements>
             <label class="form__label--hidden">Title</label>
@@ -45,7 +45,15 @@
 </template>
 
 <script>
+    import marked from 'marked'
 export default {
+    async fetch() {
+
+    const post = await this.$api.showPost(this.$route.params.slug)
+    this.post = Object.assign(post)
+    this.tags = this.post.tags ?  this.convertTags(this.post.tags) : ""
+    return null
+  },
   data() {
     return {
         post: {
@@ -53,6 +61,7 @@ export default {
             body: "",
             tags: [],
         },
+        tags: "",
         credentials: {
             emailAddress: this.$store.state.authenticatedUser.emailAddress,
             password: this.$store.state.authenticatedUser.password
@@ -63,31 +72,42 @@ export default {
   },
   middleware: 'authenticated',
   methods: {
+    formatDate(string) {
+        const date = new Date(string)
+        return date.toDateString()
+    },
+    compiledMarkdown(body) {
+        return marked(body);
+    },
     cancel() {
-        this.clearForm();
+        this.$router.push('/post');
     },
     submit() {
         this.post.tags = this.convertTags(this.tags)
 
-        this.$api.createPost(this.post, this.credentials)
-            .then((location) => {
-            this.$router.push(location)
+        this.$api.updatePost(this.post, this.post._id, this.credentials)
+            .then((reponse) => {
+                this.$router.push(`/post/${this.post._id}`)
             })
             .catch((error) => {
-            if (error.status) {
-                this.clearForm();
-                this.errors = [...error.errors]
-            } else {
-                this.$router.push(error.message)
-            }
+                if (error.status) {
+                    this.clearForm();
+                    this.errors = [...error.errors]
+                } else {
+                    this.$router.push(error.message)
+                }
             });
     },
     clearForm() {
       this.credentials.emailAddress="";
       this.credentials.password="";
     },
-    convertTags(tagsString){
-        return tagsString.split(', ');
+    convertTags(tags){ 
+        if(typeof tags === "string") {
+            return tags.split(', ');
+        } else if(Array.isArray(tags)) {
+            return tags.join(', ')
+        }
     }
   },
 };
