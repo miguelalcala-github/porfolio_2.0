@@ -22,8 +22,22 @@ export default $axios => ({
         })
     },
     
-    async createPost(payload) {
-        return $axios.$post(`/post`, payload)
+    async createPost(payload, credentials) {
+        const authorization = encodeCredentials(credentials);
+        return await $axios.$post(`/post`, payload, {headers: authorization})
+            .then(response => {
+                return response.location;
+            })
+            .catch(err => {
+                if (err.response.status === 400) {
+                    const error = new Error(err.response.statusText)
+                    error.status = err.response.status
+                    error.errors = [...err.response.data.errors]
+                    throw error; 
+                } else {
+                    throw new Error(handlePageError(err.response.status));
+                }
+            })
     },
 
     async showPost(id) {

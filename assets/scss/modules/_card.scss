@@ -5,6 +5,22 @@
 .card {
   
   @extend %card;
+  @include e(body) {
+      padding: 2px 16px;
+      cursor: pointer;
+  }
+  @include e(header) {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      background-color: palette(primary, light);
+      & > button {
+          padding: 0 0;
+          border: none;
+          background: transparent;
+          padding: 0 rem(5px);
+      }
+  }
     @include e(title) {
         max-width: rem(120px);
         white-space: nowrap;

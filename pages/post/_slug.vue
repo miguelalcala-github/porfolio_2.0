@@ -30,7 +30,7 @@ export default {
           return date.toDateString()
       },
         compiledMarkdown(body) {
-            return marked(body,  { sanitize: true });
+            return marked(body);
         }
   },
 }

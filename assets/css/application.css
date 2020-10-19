@@ -686,16 +686,30 @@ input {
 .card {
   display: flex;
   flex-flow: row wrap;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-around;
-  cursor: pointer;
   box-shadow: 0 4px 8px 0 #76c9c3;
   transition: 0.3s;
-  padding: 2px 16px;
   border-radius: 5px;
   text-align: center;
 }
 
+.card__body {
+  padding: 2px 16px;
+  cursor: pointer;
+}
+.card__header {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  background-color: #76c9c3;
+}
+.card__header > button {
+  padding: 0 0;
+  border: none;
+  background: transparent;
+  padding: 0 0.5rem;
+}
 .card__title {
   max-width: 12rem;
   white-space: nowrap;
@@ -804,6 +818,19 @@ input {
   font-weight: 300;
 }
 .form__input:focus {
+  border-color: #52bab3;
+}
+.form__textarea {
+  font-size: 1.125em;
+  margin-bottom: 1.1111111111em;
+  border-bottom: 6px solid #cfd4d6;
+  border-radius: 0.4em;
+  background: #e5e8e9;
+  color: black;
+  font-weight: 300;
+  width: 100%;
+}
+.form__textarea:focus {
   border-color: #52bab3;
 }
 .form__btn {
