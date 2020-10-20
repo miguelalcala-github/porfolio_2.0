@@ -6,7 +6,7 @@
                 <div class="grid__col--12 grid__col--sm--12">                    
                     <h1 >{{ post.title }}</h1>
                 </div>
-                <div class="grid__col--12 grid__col--sm--12">                    
+                <div class="grid__col--12 grid__col--sm--12 panel--post">                    
                     <div v-html="compiledMarkdown(post.body)" ></div>
                 </div>
                 <div class="grid__col--12 grid__col--sm--12">                    

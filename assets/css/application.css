@@ -259,7 +259,7 @@ th {
 }
 
 body {
-  color: #5d696d;
+  color: #707e83;
   font-size: 1em;
   line-height: 1.5;
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -360,6 +360,18 @@ input, textarea {
 .container {
   width: 100%;
   position: relative;
+}
+
+.panel--post > div > p {
+  display: flex;
+  flex-direction: column;
+}
+.panel--post > div img {
+  align-self: center;
+}
+.panel--post > div ul, .panel--post li {
+  list-style-type: inherit;
+  padding-left: 1em;
 }
 
 @media (min-width: 1px) and (max-width: 576px) {

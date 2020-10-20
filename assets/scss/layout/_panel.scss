@@ -17,4 +17,20 @@
             @extend %panel-padding;
         }
     }
+
+    @include m(post) {
+        & > div > p {
+            display: flex;
+            flex-direction: column;
+        }
+
+        & > div img {
+            align-self: center;
+        }
+
+        & > div ul, li {
+            list-style-type: inherit;
+            padding-left: em(16px);
+        }
+    }
 }
