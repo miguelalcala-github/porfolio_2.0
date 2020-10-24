@@ -4,7 +4,16 @@
             <nuxt-link v-if="auth" class="btn--link" to="/post/new">New Post</nuxt-link>
         </div>
         <div class="grid__col--12 grid__col--sm--12 grid">
-            <div v-for="post of posts" :key="post._id" class="grid__col--12 grid__col--sm--6 grid__col--md--4 grid__col--lg--3" >
+            <div v-if="$fetchState.pending" class="grid__col--12 grid__col--sm--12">
+                <h3>Loading posts...</h3>
+            </div>
+            <div v-else-if="$fetchState.error" class="grid__col--12 grid__col--sm--12 grid">
+                <h3 class="grid__col--12 grid__col--sm--12">Oh no! An error ocurred fetching posts, try to refresh in a moment</h3>
+                <div class="grid__col--12 grid__col--sm--12">   
+                    <button class="btn--info" @click="$fetch">Refresh</button>
+                </div>
+            </div>
+            <div v-else v-for="post of posts" :key="post._id" class="grid__col--12 grid__col--sm--6 grid__col--md--4 grid__col--lg--3" >
                 <div class="card" >                      
                     <div class="card__header" v-if="auth">
                         <button @click="goTo(`update/${post._id}`)">&#9998;</button>

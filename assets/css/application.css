@@ -696,7 +696,6 @@ input, textarea {
 }
 
 .card {
-  width: 100%;
   display: flex;
   flex-flow: row wrap;
   align-items: flex-start;
