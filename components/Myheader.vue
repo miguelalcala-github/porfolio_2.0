@@ -9,7 +9,7 @@
               <nuxt-link to="/">Home</nuxt-link>
             </li>
             <li class="nav__item">
-              <nuxt-link to="/about">Learn More</nuxt-link>
+              <nuxt-link to="/about">About</nuxt-link>
             </li>
           </ul>
           <p class="grid__col--12 grid__col--sm--6 headline-primary" :class="collapsed ? '' : 'is-collapsed-mobile' ">{{titleByPage()}}</p>
