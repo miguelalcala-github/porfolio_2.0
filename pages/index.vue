@@ -1,28 +1,33 @@
 <template>
-  <div class="grid">
-    <p class="grid__col--12 headline-secondary--grouped">
+  <div class="max-w-full">
+    <p
+      class="px-8 mx-auto max-w-full sm:max-w-3xl text-xl sm:text-2xl text-gray-600 leading-tight text-justify"
+    >
       {{ projects.description }}
     </p>
-    <div class="grid__col--12 grid home">
-      <div v-if="$fetchState.pending" class="grid__col--12 grid__col--sm--12">
+    <div class="mt-6 flex justify-center flex-wrap">
+      <div
+        v-if="$fetchState.pending"
+        class="mt-6 text-xl sm:text-2xl text-center text-teal-400"
+      >
         <h3>Loading projects...</h3>
       </div>
       <div
         v-else-if="$fetchState.error"
-        class="grid__col--12 grid__col--sm--12 grid"
+        class="w-full sm:max-w-md flex justify-center flex-wrap"
       >
-        <h3 class="grid__col--12 grid__col--sm--12">
+        <h3 class="mt-6 text-xl sm:text-2xl text-center text-red-600">
           Oh no! An error ocurred fetching posts, try to refresh in a moment
         </h3>
-        <div class="grid__col--12 grid__col--sm--12">
-          <button class="btn--info" @click="$fetch">Refresh</button>
-        </div>
+        <button class="btn btn--info" @click="$fetch">
+          Refresh
+        </button>
       </div>
       <div
         v-else
         v-for="project of projects.projects"
         :key="project.name"
-        class="grid__col--sm--6 grid__col--md--4 grid__col--lg--3 showcase"
+        class="w-full sm:w-1/2 md:w-1/3 xl:w-1/4 p-2"
       >
         <nuxt-link :to="'/projects/' + project.id">
           <img

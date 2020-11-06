@@ -1,58 +1,95 @@
 <template>
-    <header class="grid__col--12 grid">
-        <nav class="navbar grid__col--12 grid" role="navigation">
-          <span id="toggle" class="grid__col--12 icn--nav-toggle is-displayed-mobile" @click="toggle()">
-            <b class="srt">Toggle</b>
-          </span>
-          <ul class="grid__col--12 grid__col--sm--3 nav " :class="collapsed ? 'is-collapsed-mobile' : ''">
-            <li class="nav__item--current">
-              <nuxt-link to="/">Home</nuxt-link>
-            </li>
-            <li class="nav__item">
-              <nuxt-link to="/about">About</nuxt-link>
-            </li>
-          </ul>
-          <p class="grid__col--12 grid__col--sm--6 headline-primary" :class="collapsed ? '' : 'is-collapsed-mobile' ">{{titleByPage()}}</p>
-          <ul class="grid__col--12 grid__col--sm--3 nav" :class="collapsed ? 'is-collapsed-mobile' : ''">
-            <li class="nav__item">
-              <nuxt-link to="/post">Post</nuxt-link>
-            </li>
-            <li class="nav__item">
-              <button v-if="auth" class="btn--warning" @click="logOut()">Log out</button>
-              <nuxt-link v-else to="/login">Log in</nuxt-link>
-            </li>
-          </ul>
-        </nav>
-      </header>
+  <header class="px-8 pt-6 text-center">
+    <nav class="flex items-center flex-wrap justify-between" role="navigation">
+      <div class="sm:hidden -ml-2 order-1 flex-shrink-0">
+        <button
+          class="flex items-center px-3 py-2 border rounded text-teal-700 border-teal-900 hover:text-gray-600 hover:border-text-gray-600"
+          @click="toggle"
+        >
+          <svg
+            class="fill-current h-3 w-3"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <title>Menu</title>
+            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+          </svg>
+        </button>
+      </div>
+      <div
+        class="w-full block flex-grow sm:flex sm:w-3/12 order-3 sm:order-1"
+        :class="collapsed ? 'hidden' : ''"
+      >
+        <nuxt-link
+          class="text-teal-600 hover:text-gray-600 active:text-teal-400 sm:w-1/2 block mt-2"
+          to="/"
+          >Home</nuxt-link
+        >
+        <nuxt-link
+          class="text-teal-600 hover:text-gray-600 active:text-teal-400 sm:w-1/2 block mt-2"
+          to="/about"
+          >About</nuxt-link
+        >
+      </div>
+      <p
+        class="text-xl sm:text-2xl font-semibold text-teal-700 mx-auto sm:w-6/12 order-2"
+      >
+        {{ titleByPage() }}
+      </p>
+      <div
+        class="w-full block flex-grow sm:flex sm:w-3/12 order-4 sm:order-3"
+        :class="collapsed ? 'hidden' : ''"
+      >
+        <nuxt-link
+          class="text-teal-600 hover:text-gray-600 active:text-teal-400 sm:w-1/2 block mt-2"
+          to="/post"
+          >Post</nuxt-link
+        >
+        <button
+          v-if="auth"
+          class="btn--warning sm:w-1/2 block"
+          @click="logOut()"
+        >
+          Log out
+        </button>
+        <nuxt-link
+          class="text-teal-600 hover:text-gray-600 active:text-teal-400 sm:w-1/2 block mt-2"
+          v-else
+          to="/login"
+          >Log in</nuxt-link
+        >
+      </div>
+    </nav>
+  </header>
 </template>
 
 <script>
 export default {
-    data(){
-        return {
-            collapsed: true,
-        }
+  data() {
+    return {
+      collapsed: true
+    };
+  },
+  methods: {
+    toggle() {
+      this.collapsed = !this.collapsed;
     },
-    methods: {
-        toggle() {
-            this.collapsed= !this.collapsed;
-        },
-      titleByPage() {
-        if (this.$route.path === '/') {
-          return 'May the code be with you'
-        } else {
-          return 'My portfolio'
-        }
-      },
-      logOut(e) {
-        this.$logout();
+    titleByPage() {
+      if (this.$route.path === "/") {
+        return "My portfolio";
+      } else {
+        return "Miguel Angel Alcala Romero";
       }
     },
-    computed: {
-      auth() {
-        const user = this.$store.state.authenticatedUser
-        return user ? this.$store.state.authenticatedUser.firstName : false
-      }
+    logOut(e) {
+      this.$logout();
     }
-}
+  },
+  computed: {
+    auth() {
+      const user = this.$store.state.authenticatedUser;
+      return user ? this.$store.state.authenticatedUser.firstName : false;
+    }
+  }
+};
 </script>
