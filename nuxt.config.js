@@ -20,7 +20,6 @@ export default {
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
-    '@/assets/css/application.css'
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
@@ -38,7 +37,7 @@ export default {
     '@nuxt/content',
     '@nuxtjs/axios',
     'cookie-universal-nuxt',
-    '@nuxtjs/toast',
+    '@nuxtjs/toast'
   ],
 
   toast: {
@@ -64,6 +63,15 @@ export default {
     dir: 'content'
   },
 
+  // Defaults options
+  tailwindcss: {
+    cssPath: '@/assets/css/tailwind.css',
+    configPath: 'tailwind.config.js',
+    exposeConfig: false,
+    config: {}
+  },
+
+buildModules: ['@nuxtjs/tailwindcss'],
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
   }
