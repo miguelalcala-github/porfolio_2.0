@@ -6,11 +6,10 @@
       {{ projects.description }}
     </p>
     <div class="mt-6 flex justify-center flex-wrap">
-      <div
-        v-if="$fetchState.pending"
-        class="mt-6 text-xl sm:text-2xl text-center text-teal-400"
-      >
-        <h3>Loading projects...</h3>
+      <div v-if="$fetchState.pending" class="mt-6">
+        <p class="text-xl sm:text-2xl text-center text-teal-400 animate-pulse">
+          Loading projects...
+        </p>
       </div>
       <div
         v-else-if="$fetchState.error"
@@ -38,7 +37,7 @@ export default {
     };
   },
   async fetch() {
-    const projects = await this.$content("projects", "").fetch();
+    const projects = await this.$content("projects", "projects").fetch();
     this.projects = projects;
     return null;
   }
