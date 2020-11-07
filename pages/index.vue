@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-full">
+  <div class="max-w-full lg:px-56 xl:px-64">
     <p
       class="px-8 mx-auto max-w-full sm:max-w-3xl text-xl sm:text-2xl text-gray-600 leading-tight text-justify"
     >

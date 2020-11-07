@@ -30,6 +30,12 @@ h3 {
 
 .nav-link {
   @apply block mt-2 text-left font-semibold text-teal-600;
+  &:hover {
+    @apply text-gray-600;
+  }
+  &:active {
+    @apply text-teal-400;
+  }
 }
 
 .content {
@@ -56,25 +62,27 @@ h3 {
 
 .staggered-item {
   position: relative;
-}
-.staggered-item img {
-  opacity: 1;
-  transition: 0.5s ease;
-  backface-visibility: hidden;
-}
-.staggered-item .title {
-  transition: 0.5s ease;
-  opacity: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-}
-
-.staggered-item:hover img {
-  opacity: 0.1;
-}
-.staggered-item:hover .title {
-  opacity: 1;
+  & img {
+    opacity: 1;
+    transition: 0.5s ease;
+    backface-visibility: hidden;
+  }
+  & .title {
+    @apply uppercase text-teal-500 tracking-wider text-sm font-semibold;
+    transition: 0.5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+  }
+  &:hover {
+    & img {
+      opacity: 0.1;
+    }
+    & .title {
+      opacity: 1;
+    }
+  }
 }

@@ -20,14 +20,8 @@
         class="w-full block flex-grow sm:flex sm:w-3/12 order-3 sm:order-1"
         :class="collapsed ? 'hidden' : ''"
       >
-        <nuxt-link
-          class="nav-link hover:text-gray-600 active:text-teal-400 sm:w-1/2 sm:my-2"
-          to="/"
-          >Home</nuxt-link
-        >
-        <nuxt-link
-          class="nav-link hover:text-gray-600 active:text-teal-400 sm:w-1/2 sm:my-2"
-          to="/about"
+        <nuxt-link class="nav-link sm:w-1/2 sm:my-2" to="/">Home</nuxt-link>
+        <nuxt-link class="nav-link sm:w-1/2 sm:my-2" to="/about"
           >About</nuxt-link
         >
       </div>
@@ -40,11 +34,7 @@
         class="w-full block flex-grow sm:flex sm:w-3/12 order-4 sm:order-3"
         :class="collapsed ? 'hidden' : ''"
       >
-        <nuxt-link
-          class="nav-link hover:text-gray-600 active:text-teal-400 sm:w-1/2 sm:my-2"
-          to="/post"
-          >Post</nuxt-link
-        >
+        <nuxt-link class="nav-link sm:w-1/2 sm:my-2" to="/post">Post</nuxt-link>
         <a
           v-if="auth"
           class="btn btn--warning sm:w-1/2 block"
@@ -52,10 +42,7 @@
         >
           Log out
         </a>
-        <nuxt-link
-          class="nav-link hover:text-gray-600 active:text-teal-400 sm:w-1/2 sm:my-2"
-          v-else
-          to="/login"
+        <nuxt-link class="nav-link sm:w-1/2 sm:my-2" v-else to="/login"
           >Log in</nuxt-link
         >
       </div>

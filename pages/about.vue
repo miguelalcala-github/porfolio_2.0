@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-wrap justify-around">
+  <div class="flex flex-wrap justify-around lg:px-24 xl:px-56">
     <div class="order-0 w-full sm:w-2/3">
       <div class="w-full order-0 block">
         <img
