@@ -19,30 +19,18 @@
         <h3 class="mt-6 text-xl sm:text-2xl text-center text-red-600">
           Oh no! An error ocurred fetching posts, try to refresh in a moment
         </h3>
-        <button class="btn btn--info" @click="$fetch">
+        <a class="btn btn--info" @click="$fetch">
           Refresh
-        </button>
+        </a>
       </div>
-      <div
-        v-else
-        v-for="project of projects.projects"
-        :key="project.name"
-        class="w-full sm:w-1/2 md:w-1/3 xl:w-1/4 p-2"
-      >
-        <nuxt-link :to="'/projects/' + project.id">
-          <img
-            :src="project.image"
-            class="showcase__img"
-            :alt="project.name + ' main'"
-          />
-          <h5 class="showcase__img--title">{{ project.name }}</h5>
-        </nuxt-link>
-      </div>
+      <Showcase v-else :projects="projects.projects" />
     </div>
   </div>
 </template>
 
 <script>
+import gsap from "gsap";
+
 export default {
   data() {
     return {
@@ -50,7 +38,7 @@ export default {
     };
   },
   async fetch() {
-    const projects = await this.$content("projects", "projects").fetch();
+    const projects = await this.$content("projects", "").fetch();
     this.projects = projects;
     return null;
   }
