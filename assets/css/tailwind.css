@@ -2,6 +2,10 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+h3 {
+  @apply text-xl text-center font-semibold text-teal-600;
+}
+
 .btn {
   @apply mt-4 px-4 py-2 rounded-lg shadow-lg uppercase tracking-wider;
   &.btn--info {
@@ -9,6 +13,35 @@
     &:hover {
       @apply bg-gray-600;
     }
+  }
+  &.btn--link {
+    @apply text-purple-500 text-sm bg-transparent shadow-xl;
+    &:hover {
+      @apply text-white bg-purple-500;
+    }
+  }
+  &.btn--warning {
+    @apply text-red-500 text-sm bg-transparent shadow-xl;
+    &:hover {
+      @apply text-white bg-red-500;
+    }
+  }
+}
+
+.nav-link {
+  @apply block mt-2 text-left font-semibold text-teal-600;
+}
+
+.content {
+  @apply text-justify;
+  & > h2 {
+    @apply text-xl font-semibold text-teal-600;
+  }
+  & > p {
+    @apply mt-2 text-lg text-gray-600;
+  }
+  & li {
+    @apply mt-2 text-lg text-gray-600 text-center;
   }
 }
 

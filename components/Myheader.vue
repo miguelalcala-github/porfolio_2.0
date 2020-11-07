@@ -1,5 +1,5 @@
 <template>
-  <header class="px-8 pt-6 text-center">
+  <header class="px-6 pt-6 pb-4 sm:py-6 lg:px-20 text-center shadow-md">
     <nav class="flex items-center flex-wrap justify-between" role="navigation">
       <div class="sm:hidden -ml-2 order-1 flex-shrink-0">
         <button
@@ -21,18 +21,18 @@
         :class="collapsed ? 'hidden' : ''"
       >
         <nuxt-link
-          class="text-teal-600 hover:text-gray-600 active:text-teal-400 sm:w-1/2 block mt-2"
+          class="nav-link hover:text-gray-600 active:text-teal-400 sm:w-1/2 sm:my-2"
           to="/"
           >Home</nuxt-link
         >
         <nuxt-link
-          class="text-teal-600 hover:text-gray-600 active:text-teal-400 sm:w-1/2 block mt-2"
+          class="nav-link hover:text-gray-600 active:text-teal-400 sm:w-1/2 sm:my-2"
           to="/about"
           >About</nuxt-link
         >
       </div>
       <p
-        class="text-xl sm:text-2xl font-semibold text-teal-700 mx-auto sm:w-6/12 order-2"
+        class="text-xl md:text-2xl font-semibold text-teal-700 mx-auto sm:w-6/12 order-2"
       >
         {{ titleByPage() }}
       </p>
@@ -41,19 +41,19 @@
         :class="collapsed ? 'hidden' : ''"
       >
         <nuxt-link
-          class="text-teal-600 hover:text-gray-600 active:text-teal-400 sm:w-1/2 block mt-2"
+          class="nav-link hover:text-gray-600 active:text-teal-400 sm:w-1/2 sm:my-2"
           to="/post"
           >Post</nuxt-link
         >
-        <button
+        <a
           v-if="auth"
-          class="btn--warning sm:w-1/2 block"
+          class="btn btn--warning sm:w-1/2 block"
           @click="logOut()"
         >
           Log out
-        </button>
+        </a>
         <nuxt-link
-          class="text-teal-600 hover:text-gray-600 active:text-teal-400 sm:w-1/2 block mt-2"
+          class="nav-link hover:text-gray-600 active:text-teal-400 sm:w-1/2 sm:my-2"
           v-else
           to="/login"
           >Log in</nuxt-link
