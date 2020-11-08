@@ -1,16 +1,16 @@
 ---
-head:
-    title: list pagination and filtering
-    technologies: 
-        - HTML
-        - CSS
-        - JavaScript
-    live: https://mikeliampaginationfilter.netlify.app/
-    repository: https://github.com/MikeLiam/list_pagination_and_filtering
+title: list pagination and filtering
+technologies:
+  - HTML
+  - CSS
+  - JavaScript
+live: https://mikeliampaginationfilter.netlify.app/
+repository: https://github.com/MikeLiam/list_pagination_and_filtering
+showcase: https://res.cloudinary.com/da3z5stec/image/upload/v1601545122/portflio-nuxt/pagination_filtering_main_f84cam.png
 images:
-    - https://res.cloudinary.com/da3z5stec/image/upload/v1601545122/portflio-nuxt/pagination_filtering_landscape_01_mmwnwg.png
-    - https://res.cloudinary.com/da3z5stec/image/upload/v1601545122/portflio-nuxt/pagination_filtering_landscape_02_cow9s6.png
-    - https://res.cloudinary.com/da3z5stec/image/upload/v1601545122/portflio-nuxt/pagination_filtering_landscape_03_ltejtb.png
+  - https://res.cloudinary.com/da3z5stec/image/upload/v1601545122/portflio-nuxt/pagination_filtering_landscape_01_mmwnwg.png
+  - https://res.cloudinary.com/da3z5stec/image/upload/v1601545122/portflio-nuxt/pagination_filtering_landscape_02_cow9s6.png
+  - https://res.cloudinary.com/da3z5stec/image/upload/v1601545122/portflio-nuxt/pagination_filtering_landscape_03_ltejtb.png
 ---
 
 A list pagination and firltering web page throw 'rogressive enhancement'.  

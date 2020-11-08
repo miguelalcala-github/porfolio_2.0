@@ -1,4 +1,5 @@
 ---
+intro: Here's my Treehouse Projects showcase where you may find each one of them with a litle "What's it for" and over time will be showing up other and amazing projects outflowed from my mind
 image: https://res.cloudinary.com/da3z5stec/image/upload/v1601479844/portflio-nuxt/profile_iwp5ff.png
 altImage: Miguel Angel Alcala Romero
 ---

@@ -3,7 +3,7 @@
     <p
       class="px-8 mx-auto max-w-full sm:max-w-3xl text-xl sm:text-2xl text-gray-600 leading-tight text-justify"
     >
-      {{ projects.description }}
+      {{ intro }}
     </p>
     <div class="mt-6 flex justify-center flex-wrap">
       <div v-if="$fetchState.pending" class="mt-6">
@@ -22,7 +22,7 @@
           Refresh
         </a>
       </div>
-      <Showcase v-else :projects="projects.projects" />
+      <Showcase v-else :projects="projects" />
     </div>
   </div>
 </template>
@@ -33,11 +33,17 @@ import gsap from "gsap";
 export default {
   data() {
     return {
-      projects: {}
+      projects: {},
+      intro: ""
     };
   },
   async fetch() {
-    const projects = await this.$content("projects", "projects").fetch();
+    const intro = await this.$content("about", "info")
+      .only(["intro"])
+      .fetch();
+    const projects = await this.$content("projects")
+      .sortBy("createdAt", "asc")
+      .fetch();
     this.projects = projects;
     return null;
   }
