@@ -72,6 +72,11 @@ export default {
       this.$logout();
     }
   },
+  watch: {
+    $route() {
+      this.collapsed = true;
+    }
+  },
   computed: {
     auth() {
       const user = this.$store.state.authenticatedUser;

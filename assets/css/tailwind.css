@@ -2,6 +2,10 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+h1 {
+  @apply text-2xl text-center font-semibold text-teal-600 capitalize;
+}
+
 h3 {
   @apply text-xl text-center font-semibold text-teal-600;
 }
