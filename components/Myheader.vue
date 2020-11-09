@@ -34,7 +34,7 @@
         class="w-full block flex-grow sm:flex sm:justify-center sm:w-3/12 order-4 sm:order-3"
         :class="collapsed ? 'hidden' : ''"
       >
-        <nuxt-link class="nav-link sm:my-2" to="/post">Blog</nuxt-link>
+        <nuxt-link class="nav-link sm:my-2" to="/blog">Blog</nuxt-link>
       </div>
     </nav>
   </header>
@@ -54,6 +54,8 @@ export default {
     titleByPage() {
       if (this.$route.path === "/") {
         return "My portfolio";
+      } else if (this.$route.path === "/blog") {
+        return "My Tech-Blog";
       } else {
         return "Miguel Angel Alcala Romero";
       }

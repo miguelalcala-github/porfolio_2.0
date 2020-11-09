@@ -3,12 +3,12 @@ export default function (doc) {
     return '/not-found'
   }
 
-  if (doc.type === 'homepage') {
+  if (doc.type === 'blog_home') {
     return '/'
   }
 
-  if (doc.type === 'page') {
-    return '/blog/' + doc.uid
+  if (doc.type === 'blog_post') {
+    return '/blog/' + doc.slugs
   }
 
   return '/not-found'
