@@ -16,7 +16,8 @@ export default {
       { hid: 'description', name: 'description', content: '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
+      { rel: 'stylesheet', href: 'http://fonts.googleapis.com/css?family=Lato:100:300:400:700:900' }
     ]
   },
 

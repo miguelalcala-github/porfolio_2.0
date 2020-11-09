@@ -38,9 +38,10 @@ export default {
     };
   },
   async fetch() {
-    const intro = await this.$content("about", "info")
+    const contentIntro = await this.$content("about", "info")
       .only(["intro"])
       .fetch();
+    this.intro = contentIntro.intro;
     const projects = await this.$content("projects")
       .sortBy("createdAt", "asc")
       .fetch();
