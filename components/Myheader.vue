@@ -31,20 +31,10 @@
         {{ titleByPage() }}
       </p>
       <div
-        class="w-full block flex-grow sm:flex sm:w-3/12 order-4 sm:order-3"
+        class="w-full block flex-grow sm:flex sm:justify-center sm:w-3/12 order-4 sm:order-3"
         :class="collapsed ? 'hidden' : ''"
       >
-        <nuxt-link class="nav-link sm:w-1/2 sm:my-2" to="/post">Post</nuxt-link>
-        <a
-          v-if="auth"
-          class="btn btn--warning sm:w-1/2 block"
-          @click="logOut()"
-        >
-          Log out
-        </a>
-        <nuxt-link class="nav-link sm:w-1/2 sm:my-2" v-else to="/login"
-          >Log in</nuxt-link
-        >
+        <nuxt-link class="nav-link sm:my-2" to="/post">Blog</nuxt-link>
       </div>
     </nav>
   </header>
@@ -67,20 +57,11 @@ export default {
       } else {
         return "Miguel Angel Alcala Romero";
       }
-    },
-    logOut(e) {
-      this.$logout();
     }
   },
   watch: {
     $route() {
       this.collapsed = true;
-    }
-  },
-  computed: {
-    auth() {
-      const user = this.$store.state.authenticatedUser;
-      return user ? this.$store.state.authenticatedUser.firstName : false;
     }
   }
 };

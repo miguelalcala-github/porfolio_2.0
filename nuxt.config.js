@@ -26,7 +26,7 @@ export default {
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: ['~/plugins/api', '~/plugins/log'],
+  plugins: ['~/plugins/link-resolver', '~/plugins/html-serializer'],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
@@ -40,8 +40,15 @@ export default {
     '@nuxt/content',
     '@nuxtjs/axios',
     'cookie-universal-nuxt',
-    '@nuxtjs/toast'
+    '@nuxtjs/toast',
+    '@nuxtjs/prismic'
   ],
+
+    prismic: {
+    endpoint: "https://migblog.cdn.prismic.io/api/v2",
+    linkResolver: '@/plugins/link-resolver',
+    htmlSerializer: '@/plugins/html-serializer',
+  },
 
   toast: {
     position: 'top-center',
@@ -74,7 +81,9 @@ export default {
     config: {
     }
   },
-
+  generate: {
+    fallback: "404.html"
+  },
 buildModules: ['@nuxtjs/tailwindcss'],
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
