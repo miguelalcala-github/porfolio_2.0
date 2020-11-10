@@ -1,6 +1,6 @@
 <template>
   <div class="mt-2 w-full h-auto">
-    <img :src="img.url" :alt="img.alt" />
+    <img class="mx-auto" :src="img.url" :alt="img.alt" />
   </div>
 </template>
 
