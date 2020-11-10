@@ -16,7 +16,7 @@ Blog section:
 ![Blog page](https://res.cloudinary.com/da3z5stec/image/upload/v1605013266/portfolio_2.0/blogpage_psdqny.png)
 There is a list of posts where clicked goes to specific post:
 ![Post page](https://res.cloudinary.com/da3z5stec/image/upload/v1605013266/portfolio_2.0/postpage_cxutgy.png)
-And always keeping in mind mobile-first:
+And always keeping in mind mobile-first:  
 ![Mobile first page](https://res.cloudinary.com/da3z5stec/image/upload/v1605013266/portfolio_2.0/mobile_lnijh5.png)
 
 The project has been configured to use Netlify to deploy a static site generated of the app and have it in a live link.
