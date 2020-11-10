@@ -27,9 +27,9 @@ User begins at the landing page with a personal introduction and a project's men
 - Project's images
 - Technologies used
 - Links to live demo and git hub repository  
-  <br/>
-  User can visit the about page for more detailed info about the author:  
-  <br/>
+<br/>
+User can visit the about page for more detailed info about the author:  
+<br/>
 - Description
 - Skills
 - Contact Info

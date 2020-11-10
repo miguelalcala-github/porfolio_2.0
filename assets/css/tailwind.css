@@ -50,8 +50,11 @@ h3 {
   & p {
     @apply mt-2 text-lg text-gray-600;
   }
+  & ul {
+    list-style: inside;
+  }
   & li {
-    @apply mt-2 text-lg text-gray-600 text-center;
+    @apply text-lg text-gray-600;
   }
   & .image {
     @apply mt-2;
@@ -65,6 +68,12 @@ h3 {
 .page-enter,
 .page-leave-to {
   opacity: 0;
+}
+
+.sidelist {
+  & li {
+    @apply mt-2 text-lg text-gray-600 text-center;
+  }
 }
 
 .staggered-item {

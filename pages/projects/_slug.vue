@@ -9,7 +9,7 @@
     <div class="mt-4 sm:mt-2 w-full sm:w-1/3 sm:order-1">
       <div class="px-6">
         <h3>TECHNOLOGIES</h3>
-        <ul v-for="tech of project.technologies" :key="tech" class="content">
+        <ul v-for="tech of project.technologies" :key="tech" class="sidelist">
           <li>{{ tech }}</li>
         </ul>
       </div>
