@@ -44,14 +44,17 @@ h3 {
 
 .content {
   @apply text-justify;
-  & > h2 {
+  & h2 {
     @apply text-xl font-semibold text-teal-600;
   }
-  & > p {
+  & p {
     @apply mt-2 text-lg text-gray-600;
   }
   & li {
     @apply mt-2 text-lg text-gray-600 text-center;
+  }
+  & .image {
+    @apply mt-2;
   }
 }
 

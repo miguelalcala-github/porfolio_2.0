@@ -8,7 +8,7 @@ export default function (doc) {
   }
 
   if (doc.type === 'blog_post') {
-    return '/blog/' + doc.slugs
+    return '/blog/posts/' + doc.uid
   }
 
   return '/not-found'

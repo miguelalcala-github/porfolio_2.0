@@ -50,13 +50,12 @@ export default {
     }
   },
   created() {
-    console.log(this.post);
-    (this.link = LinkResolver(this.post)),
-      (this.formattedDate = Intl.DateTimeFormat("en-GB", {
-        year: "numeric",
-        month: "short",
-        day: "2-digit"
-      }).format(new Date(this.post.data.release_date)));
+    this.link = LinkResolver(this.post);
+    this.formattedDate = Intl.DateTimeFormat("en-GB", {
+      year: "numeric",
+      month: "short",
+      day: "2-digit"
+    }).format(new Date(this.post.data.release_date));
   }
 };
 </script>
