@@ -2,7 +2,7 @@
 
 export default {
   // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
-   ssr: true,
+   mode: 'universal',
 
   // Target (https://go.nuxtjs.dev/config-target)
   //target: 'static',
@@ -87,6 +87,6 @@ export default {
 buildModules: ['@nuxtjs/tailwindcss'],
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
-    transpile: ["gsap", "gsap/Draggable"]
+    transpile: ["gsap", "gsap/Draggable"],
   }
 }

@@ -51,27 +51,21 @@ export default {
     };
   },
   async fetch() {
-    try {
-      // Query to get blog home content
-      const homepageContent = (await this.$prismic.api.getSingle("blog_home"))
-        .data;
+    // Query to get blog home content
+    const homepageContent = (await this.$prismic.api.getSingle("blog_home"))
+      .data;
 
-      // Query to get posts content to preview
-      const blogPosts = await this.$prismic.api.query(
-        this.$prismic.predicates.at("document.type", "blog_post"),
-        { orderings: "[my.post.date desc]" }
-      );
+    // Query to get posts content to preview
+    const blogPosts = await this.$prismic.api.query(
+      this.$prismic.predicates.at("document.type", "blog_post"),
+      { orderings: "[my.post.date desc]" }
+    );
 
-      // Returns data to be used in template
-      this.homepageContent = homepageContent;
-      this.posts = blogPosts.results;
-      this.image = homepageContent.head_background.url;
-      return null;
-    } catch (e) {
-      // Returns error page
-
-      this.error({ statusCode: 404, message: "Page not found" });
-    }
+    // Returns data to be used in template
+    this.homepageContent = homepageContent;
+    this.posts = blogPosts.results;
+    this.image = homepageContent.head_background.url;
+    return null;
   }
 };
 </script>

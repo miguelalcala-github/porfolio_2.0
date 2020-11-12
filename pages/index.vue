@@ -22,7 +22,15 @@
           Refresh
         </a>
       </div>
-      <Showcase v-else :projects="projects" />
+      <transition
+        v-else
+        :css="false"
+        @before-enter="beforeEnterEl"
+        @after-enter="enterEl"
+        appear
+      >
+        <Showcase :projects="projects" />
+      </transition>
     </div>
   </div>
 </template>
@@ -47,6 +55,23 @@ export default {
       .fetch();
     this.projects = projects;
     return null;
+  },
+  methods: {
+    beforeEnterEl: function(el) {
+      gsap.set(el.children, {
+        scale: 0.5,
+        opacity: 0
+      });
+    },
+    enterEl: function(el, done) {
+      gsap.to(el.children, {
+        duration: 1.5,
+        scale: 1,
+        opacity: 1,
+        ease: "back",
+        stagger: 0.5
+      });
+    }
   }
 };
 </script>
